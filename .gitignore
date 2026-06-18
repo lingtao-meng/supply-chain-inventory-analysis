@@ -1,1 +1,5 @@
 build_notebooks.py
+.DS_Store
+__pycache__/
+.ipynb_checkpoints/
+*.pyc
