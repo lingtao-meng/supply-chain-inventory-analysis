@@ -1,5 +1,8 @@
 # 供应链库存管理分析
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
+
+
 用 Tableau Superstore 零售数据做的一个库存管理分析，包含 ABC 分类、EOQ 经济订货批量、安全库存和再订货点四个模块。
 
 ## 项目内容
