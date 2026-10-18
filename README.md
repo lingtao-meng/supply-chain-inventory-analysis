@@ -1,6 +1,6 @@
 # 供应链库存管理分析
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/) [![CI](https://github.com/lingtao-meng/supply-chain-inventory-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/lingtao-meng/supply-chain-inventory-analysis/actions/workflows/ci.yml)
 
 
 用 Tableau Superstore 零售数据做库存管理分析：ABC 分类 → EOQ → 安全库存 → 再订货点 → **全 SKU 仿真验证**。
