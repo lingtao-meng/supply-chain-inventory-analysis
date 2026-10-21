@@ -1,0 +1,81 @@
+{
+  "assumptions": {
+    "lead_time_weeks": 4.0,
+    "order_cost": 50.0,
+    "holding_rate": 0.25,
+    "shortage_cost_per_unit": 50.0
+  },
+  "abc_counts": {
+    "A": 125,
+    "B": 53,
+    "C": 22
+  },
+  "summary": [
+    {
+      "policy": "ABC",
+      "budget": 49832.27446556605,
+      "shortage_units": 12.872418401022596,
+      "shortage_cost": 643.6209200511298,
+      "fill_rate": 0.9975629650887878,
+      "avg_z": 2.030824304627572
+    },
+    {
+      "policy": "uniform",
+      "budget": 49832.27446556605,
+      "shortage_units": 6.852396196376663,
+      "shortage_cost": 342.6198098188332,
+      "fill_rate": 0.9987026890957257,
+      "avg_z": 2.1670503066185454
+    },
+    {
+      "policy": "optimized",
+      "budget": 49831.03290177186,
+      "shortage_units": 5.419944990197022,
+      "shortage_cost": 270.9972495098511,
+      "fill_rate": 0.9989738839473311,
+      "avg_z": 2.2880000000000003
+    }
+  ],
+  "frontier": [
+    {
+      "budget_multiplier": 0.25,
+      "budget": 12458.068616391512,
+      "uniform_z": 0.5417625766546366,
+      "uniform_fill": 0.9552116520439866,
+      "optimized_fill": 0.9643003308783844,
+      "optimized_spend": 12456.796568986529
+    },
+    {
+      "budget_multiplier": 0.5,
+      "budget": 24916.137232783025,
+      "uniform_z": 1.0835251533092731,
+      "uniform_fill": 0.9828589829404685,
+      "optimized_fill": 0.9868563506875913,
+      "optimized_spend": 24915.621523113365
+    },
+    {
+      "budget_multiplier": 0.75,
+      "budget": 37374.20584917454,
+      "uniform_z": 1.62528772996391,
+      "uniform_fill": 0.9947063396568178,
+      "optimized_fill": 0.9958719226145408,
+      "optimized_spend": 37373.96345598543
+    },
+    {
+      "budget_multiplier": 1.0,
+      "budget": 49832.27446556605,
+      "uniform_z": 2.1670503066185463,
+      "uniform_fill": 0.9987026890957257,
+      "optimized_fill": 0.9989738839473311,
+      "optimized_spend": 49831.03290177186
+    },
+    {
+      "budget_multiplier": 1.25,
+      "budget": 62290.34308195756,
+      "uniform_z": 2.7088128832731826,
+      "uniform_fill": 0.999750940135126,
+      "optimized_fill": 0.9998012713915441,
+      "optimized_spend": 62289.17975168884
+    }
+  ]
+}

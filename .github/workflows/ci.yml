@@ -23,6 +23,11 @@ jobs:
       - name: Run inventory simulation (short horizon)
         run: python python/inventory_simulation.py --reps 10 --horizon 120
 
+      - name: Demand classification & budget tests
+        run: |
+          python tests/test_demand_classification.py
+          python tests/test_inventory_budget.py
+
       - name: Check outputs
         run: |
           test -f results/simulation_summary.csv

@@ -1,0 +1,36 @@
+{
+  "data": "/Users/liaomeixi/.cache/kagglehub/datasets/vivek468/superstore-dataset-final/versions/1/Sample - Superstore.csv",
+  "weeks": 209,
+  "products": 1863,
+  "master_products": 200,
+  "thresholds": {
+    "adi": 1.32,
+    "cv2": 0.49
+  },
+  "summary": [
+    {
+      "demand_class": "intermittent",
+      "products": 1567,
+      "share": 0.8411164787976382,
+      "avg_nonzero_weeks": 5.282067645181876,
+      "avg_adi": 55.948381873162276,
+      "avg_cv2": 0.22320620206042696,
+      "method": "Croston / SBA"
+    },
+    {
+      "demand_class": "lumpy",
+      "products": 296,
+      "share": 0.1588835212023618,
+      "avg_nonzero_weeks": 5.277027027027027,
+      "avg_adi": 50.77067627380127,
+      "avg_cv2": 0.6903964493600746,
+      "method": "聚合预测 + 人工复核"
+    }
+  ],
+  "methods": {
+    "smooth": "指数平滑 / ARIMA",
+    "erratic": "指数平滑 + 分位数缓冲",
+    "intermittent": "Croston / SBA",
+    "lumpy": "聚合预测 + 人工复核"
+  }
+}

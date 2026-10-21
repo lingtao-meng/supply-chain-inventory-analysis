@@ -111,6 +111,66 @@ Tableau Superstore（Kaggle 公开数据），原始 9,994 条交易记录，按
 
 ---
 
+## 需求分类：不是所有 SKU 都该用指数平滑
+
+![需求分类](images/demand_classification.png)
+
+用 209 周的周度需求做 Syntetos–Boylan 分类（ADI × CV²）：
+
+| 类别 | SKU 数 | 占比 | 建议方法 |
+|---|---|---|---|
+| Intermittent（间歇） | 1,567 | 84.1% | Croston / SBA |
+| Lumpy（块状） | 296 | 15.9% | 聚合预测 + 人工复核 |
+| Smooth / Erratic | 0 | 0% | — |
+
+Top 200 SKU（参与仿真与预算分配的那批）里也是 **170 个 intermittent + 30 个 lumpy**，没有一个 smooth。
+这说明：**这套 assortment 的默认预测方法不该是指数平滑/ARIMA，而是间歇需求方法**；
+同时，用正态近似算安全库存会偏乐观（下一步应做 lead-time 需求的 empirical bootstrap 或 compound Poisson）。
+
+## 预算约束下的安全库存分配
+
+![预算分配](images/inventory_budget.png)
+
+把安全库存的**持有成本预算**当成约束，比较三种分配：
+
+| 策略 | 预算 | 填充率 | 年缺货成本 | 平均 z |
+|---|---|---|---|---|
+| ABC（A 99% / B 95% / C 90%） | $49,832 | 99.756% | $644 | 2.03 |
+| 统一 z（同预算） | $49,832 | 99.870% | $343 | 2.17 |
+| **边际优化**（同预算） | $49,831 | **99.897%** | **$271** | 2.29 |
+
+预算去向（持有成本）：
+
+| 类别 | ABC 策略 | 边际优化 |
+|---|---|---|
+| A | $42,462 | $38,967 |
+| B | $5,849 | $8,103 |
+| C | $1,520 | $2,761 |
+
+**ABC 是管理强度的分类，不是服务水平的最优解**——这句话在上一节是判断，这一节有了数字：
+同样预算下，统一 z 的填充率反而比 ABC 高 0.11 个百分点、缺货成本低 47%；
+按边际缺货减少/边际持有成本分配，再提高到 99.897%，并把约 $3.5k 从 A 类挪到 B/C 类。
+
+预算越紧，优化越值钱：
+
+| 预算占 ABC 预算 | 统一 z 填充率 | 边际优化填充率 |
+|---|---|---|
+| 25% | 95.52% | **96.43%** |
+| 50% | 98.29% | **98.69%** |
+| 75% | 99.47% | **99.59%** |
+| 100% | 99.87% | **99.90%** |
+
+**假设**：提前期 4 周、订货成本 $50、持有成本率 25%、缺货成本 $50/件、正态需求近似。
+这些参数写在脚本里可改；换参数后结论可能变化——所以这是一套**分配方法**，不是一个固定答案。
+
+```bash
+python python/demand_classification.py   # ADI/CV² 分类 + 图
+python python/inventory_budget.py        # 预算分配 + 前沿 + 图
+python python/inventory_budget.py --lead-time 6 --shortage-cost 80
+```
+
+---
+
 ## 项目结构
 
 ```
@@ -119,8 +179,13 @@ notebooks/02_eoq_analysis.ipynb         EOQ + 双因素敏感性 + 联合订货 
 notebooks/03_safety_stock.ipynb         三档服务水平的安全库存
 notebooks/04_reorder_point.ipynb        ROP + 库存仿真
 python/inventory_simulation.py          ★ 200 SKU × 365 天 × 100 次重复仿真 + 成本-服务前沿
-results/                                仿真结果、前沿曲线、最优服务水平敏感性
+python/demand_classification.py         ADI/CV² 需求分类（Syntetos–Boylan）
+python/inventory_budget.py              预算约束下的安全库存分配（ABC / 统一 z / 边际优化）
+tests/                                  IE 分析单测
+results/                                仿真、分类、预算分配结果
 images/cost_service_frontier.png        成本-服务前沿图
+images/demand_classification.png        需求分类图
+images/inventory_budget.png             预算-填充率前沿与预算去向
 ```
 
 ---
@@ -138,6 +203,10 @@ python python/inventory_simulation.py
 
 # 换参数试试
 python python/inventory_simulation.py --shortage-cost 250 --reps 200
+
+# 需求分类 + 预算约束分配（先分类，再分配）
+python python/demand_classification.py
+python python/inventory_budget.py
 ```
 
 ---
