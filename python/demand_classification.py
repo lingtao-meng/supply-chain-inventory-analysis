@@ -135,13 +135,6 @@ def plot(stats: pd.DataFrame, summary: pd.DataFrame, images: Path) -> None:
     ax.set_ylabel("CV² of non-zero demand")
     ax.set_yscale("log")
     ax.set_title("Demand classification (Syntetos–Boylan)")
-    for label, x, y in [
-        ("smooth", 1.45, 1e-2),
-        ("erratic", 1.45, 2.0),
-        ("intermittent", 16, 1e-2),
-        ("lumpy", 16, 2.0),
-    ]:
-        ax.text(x, y, label, fontsize=8, color="#666", ha="left", va="center")
     ax.legend(fontsize=8)
 
     ax2 = axes[1]
