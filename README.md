@@ -238,7 +238,7 @@ cd ..
 
 ## 数据来源
 
-Tableau Superstore Dataset（Kaggle 公开数据），9,994 条交易，2016 年全年。
+Tableau Superstore Dataset（Kaggle 公开数据），9,994 条交易，2014-01 至 2017-12。
 
 ## License
 
