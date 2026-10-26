@@ -1,11 +1,14 @@
-> 这个仓库已经归档，内容并入了 [multi-echelon-inventory-mip/inventory](https://github.com/lingtao-meng/multi-echelon-inventory-mip/tree/main/inventory)。后续优化在那边做。
-
-# 供应链库存管理分析
+# 供应链库存与网络优化
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/) [![CI](https://github.com/lingtao-meng/supply-chain-inventory-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/lingtao-meng/supply-chain-inventory-analysis/actions/workflows/ci.yml)
 
 
-用 Tableau Superstore 零售数据做库存管理分析：ABC 分类 → EOQ → 安全库存 → 再订货点 → **全 SKU 仿真验证**。
+这个仓库现在分两层：
+
+- **SKU 层**（根目录）：Superstore 200 个 SKU 的 ABC、EOQ、安全库存、再订货点，加上 ADI/CV² 分类和预算分配。
+- **网络层**（`network_mip/`）：8 个候选仓、20 个需求区的多级网络 MILP，后面补了两阶段随机规划和 VSS/EVPI。
+
+SKU 层回答“每个 SKU 备多少”，网络层回答“仓怎么布”，合起来是库存决策的上下两层。
 
 **最重要的结论不是「省了多少钱」，而是「95% 服务水平到底值不值」：**
 
@@ -173,6 +176,17 @@ python python/inventory_budget.py --lead-time 6 --shortage-cost 80
 
 ---
 
+## 多级网络模块
+
+`network_mip/` 是网络层：1 个中心仓 + 8 个候选区域仓 + 20 个需求区，决定开几个仓、开在哪、谁服务谁。
+
+- 基准最优：开 5 个仓，年化成本 $4,454,068，比单中心直发低 32.1%
+- 随机规划：容量 35% 时 VSS $36,529（0.77%），EVPI $55,493（1.16%）
+- 开仓方案：容量 100% 时 5/5/5，50% 时 5/5/6，35% 时 6/6/6
+- 入口：`network_mip/README.md`
+- 代码：`network_mip/src/`
+- 结果：`network_mip/results/`、`network_mip/images/`
+
 ## 项目结构
 
 ```
@@ -183,6 +197,7 @@ notebooks/04_reorder_point.ipynb        ROP + 库存仿真
 python/inventory_simulation.py          ★ 200 SKU × 365 天 × 100 次重复仿真 + 成本-服务前沿
 python/demand_classification.py         ADI/CV² 需求分类（Syntetos–Boylan）
 python/inventory_budget.py              预算约束下的安全库存分配（ABC / 统一 z / 边际优化）
+network_mip/                            多级网络 MILP + 两阶段随机规划
 tests/                                  IE 分析单测
 results/                                仿真、分类、预算分配结果
 images/cost_service_frontier.png        成本-服务前沿图
@@ -209,6 +224,14 @@ python python/inventory_simulation.py --shortage-cost 250 --reps 200
 # 需求分类 + 预算约束分配（先分类，再分配）
 python python/demand_classification.py
 python python/inventory_budget.py
+
+# 多级网络 MILP
+cd network_mip
+pip install -r requirements.txt
+python scripts/solve.py
+python scripts/stochastic.py --scenarios 12 --sigma 0.4 --capacity-scales 1.0,0.5,0.35
+python -m unittest discover -s tests -v
+cd ..
 ```
 
 ---
