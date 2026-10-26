@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Unit tests (solver included, ~1s)
+        run: python -m unittest discover -s tests -v
+
+      - name: Full solve + sensitivity
+        run: python scripts/solve.py
+
+      - name: Check outputs
+        run: |
+          test -f results/summary.md
+          test -f results/policy_comparison.csv
+          test -f images/network_map.png
+
+      - name: Stochastic network design
+        run: python scripts/stochastic.py --scenarios 4 --capacity-scales 1.0,0.35
+
+      - name: Check stochastic outputs
+        run: |
+          test -f results/stochastic_summary.csv
+          test -f results/stochastic_scenarios.csv
+          test -f images/stochastic.png

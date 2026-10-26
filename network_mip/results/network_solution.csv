@@ -1,0 +1,21 @@
+zone,served_by,is_direct
+Australia,Singapore,False
+Brazil,São Paulo,False
+China,Shanghai,False
+Cuba,central direct,True
+Dominican Republic,central direct,True
+El Salvador,central direct,True
+France,Rotterdam,False
+Germany,Rotterdam,False
+Guatemala,central direct,True
+Honduras,central direct,True
+India,Singapore,False
+Indonesia,Singapore,False
+Italy,Rotterdam,False
+Mexico,central direct,True
+Nicaragua,central direct,True
+Nigeria,Lagos,False
+Spain,Rotterdam,False
+Turkey,Rotterdam,False
+United Kingdom,Rotterdam,False
+United States,central direct,True

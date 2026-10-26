@@ -1,0 +1,326 @@
+{
+ "meta": {
+  "source": "DataCo SupplyChainDataset",
+  "period_weeks": 160.9,
+  "dates": [
+   "2015-01-01",
+   "2018-01-31"
+  ],
+  "note": "demand/CV/unit value from real orders; coordinates and cost rates are stated approximations"
+ },
+ "central": {
+  "name": "Memphis (central DC)",
+  "lat": 35.15,
+  "lon": -90.05
+ },
+ "dcs": [
+  {
+   "name": "Los Angeles",
+   "lat": 34.05,
+   "lon": -118.24,
+   "fixed_cost": 100000,
+   "capacity": 900000
+  },
+  {
+   "name": "Rotterdam",
+   "lat": 51.92,
+   "lon": 4.48,
+   "fixed_cost": 105000,
+   "capacity": 1200000
+  },
+  {
+   "name": "São Paulo",
+   "lat": -23.55,
+   "lon": -46.63,
+   "fixed_cost": 80000,
+   "capacity": 600000
+  },
+  {
+   "name": "Dubai",
+   "lat": 25.2,
+   "lon": 55.27,
+   "fixed_cost": 75000,
+   "capacity": 600000
+  },
+  {
+   "name": "Singapore",
+   "lat": 1.35,
+   "lon": 103.82,
+   "fixed_cost": 90000,
+   "capacity": 800000
+  },
+  {
+   "name": "Shanghai",
+   "lat": 31.23,
+   "lon": 121.47,
+   "fixed_cost": 95000,
+   "capacity": 1000000
+  },
+  {
+   "name": "Lagos",
+   "lat": 6.52,
+   "lon": 3.38,
+   "fixed_cost": 55000,
+   "capacity": 400000
+  },
+  {
+   "name": "Johannesburg",
+   "lat": -26.2,
+   "lon": 28.05,
+   "fixed_cost": 60000,
+   "capacity": 450000
+  }
+ ],
+ "zones": [
+  {
+   "name": "United States",
+   "lat": 39.8,
+   "lon": -98.6
+  },
+  {
+   "name": "France",
+   "lat": 46.2,
+   "lon": 2.2
+  },
+  {
+   "name": "Mexico",
+   "lat": 23.6,
+   "lon": -102.5
+  },
+  {
+   "name": "Germany",
+   "lat": 51.2,
+   "lon": 10.4
+  },
+  {
+   "name": "Australia",
+   "lat": -25.3,
+   "lon": 133.8
+  },
+  {
+   "name": "United Kingdom",
+   "lat": 55.4,
+   "lon": -3.4
+  },
+  {
+   "name": "Brazil",
+   "lat": -14.2,
+   "lon": -51.9
+  },
+  {
+   "name": "China",
+   "lat": 35.9,
+   "lon": 104.2
+  },
+  {
+   "name": "Italy",
+   "lat": 41.9,
+   "lon": 12.6
+  },
+  {
+   "name": "India",
+   "lat": 20.6,
+   "lon": 78.9
+  },
+  {
+   "name": "Spain",
+   "lat": 40.5,
+   "lon": -3.7
+  },
+  {
+   "name": "Indonesia",
+   "lat": -0.8,
+   "lon": 113.9
+  },
+  {
+   "name": "El Salvador",
+   "lat": 13.8,
+   "lon": -88.9
+  },
+  {
+   "name": "Honduras",
+   "lat": 15.2,
+   "lon": -86.2
+  },
+  {
+   "name": "Dominican Republic",
+   "lat": 18.7,
+   "lon": -70.2
+  },
+  {
+   "name": "Cuba",
+   "lat": 21.5,
+   "lon": -77.8
+  },
+  {
+   "name": "Turkey",
+   "lat": 38.9,
+   "lon": 35.2
+  },
+  {
+   "name": "Nicaragua",
+   "lat": 12.9,
+   "lon": -85.2
+  },
+  {
+   "name": "Guatemala",
+   "lat": 15.8,
+   "lon": -90.2
+  },
+  {
+   "name": "Nigeria",
+   "lat": 9.1,
+   "lon": 8.7
+  }
+ ],
+ "families": [
+  {
+   "name": "Fan Shop",
+   "unit_value": 145.47,
+   "cv": 0.477,
+   "weekly_demand": {
+    "United States": 1854.316,
+    "France": 937.229,
+    "Mexico": 1027.869,
+    "Germany": 670.036,
+    "Australia": 559.503,
+    "United Kingdom": 536.377,
+    "Brazil": 608.739,
+    "China": 380.586,
+    "Italy": 359.201,
+    "India": 299.147,
+    "Spain": 284.849,
+    "Indonesia": 276.146,
+    "El Salvador": 278.757,
+    "Honduras": 277.389,
+    "Dominican Republic": 289.449,
+    "Cuba": 269.805,
+    "Turkey": 262.345,
+    "Nicaragua": 234.867,
+    "Guatemala": 222.06,
+    "Nigeria": 183.02
+   }
+  },
+  {
+   "name": "Apparel",
+   "unit_value": 73.26,
+   "cv": 0.442,
+   "weekly_demand": {
+    "United States": 1751.243,
+    "France": 892.842,
+    "Mexico": 914.352,
+    "Germany": 635.346,
+    "Australia": 523.57,
+    "United Kingdom": 489.876,
+    "Brazil": 525.56,
+    "China": 345.897,
+    "Italy": 328.242,
+    "India": 290.444,
+    "Spain": 259.485,
+    "Indonesia": 270.426,
+    "El Salvador": 256.75,
+    "Honduras": 244.565,
+    "Dominican Republic": 256.128,
+    "Cuba": 250.16,
+    "Turkey": 241.208,
+    "Nicaragua": 216.217,
+    "Guatemala": 187.371,
+    "Nigeria": 155.666
+   }
+  },
+  {
+   "name": "Golf",
+   "unit_value": 41.7,
+   "cv": 0.337,
+   "weekly_demand": {
+    "United States": 1815.027,
+    "France": 923.801,
+    "Mexico": 936.732,
+    "Germany": 636.963,
+    "Australia": 476.696,
+    "United Kingdom": 477.194,
+    "Brazil": 593.446,
+    "China": 329.236,
+    "Italy": 317.176,
+    "India": 292.806,
+    "Spain": 258.242,
+    "Indonesia": 248.917,
+    "El Salvador": 285.844,
+    "Honduras": 263.215,
+    "Dominican Republic": 265.08,
+    "Cuba": 239.343,
+    "Turkey": 244.316,
+    "Nicaragua": 220.568,
+    "Guatemala": 199.805,
+    "Nigeria": 172.451
+   }
+  },
+  {
+   "name": "Footwear",
+   "unit_value": 83.45,
+   "cv": 0.343,
+   "weekly_demand": {
+    "United States": 748.49,
+    "France": 382.078,
+    "Mexico": 394.139,
+    "Germany": 295.417,
+    "Australia": 237.353,
+    "United Kingdom": 228.526,
+    "Brazil": 239.343,
+    "China": 157.904,
+    "Italy": 133.535,
+    "India": 115.879,
+    "Spain": 115.506,
+    "Indonesia": 105.808,
+    "El Salvador": 116.252,
+    "Honduras": 113.144,
+    "Dominican Republic": 109.041,
+    "Cuba": 124.21,
+    "Turkey": 100.959,
+    "Nicaragua": 101.083,
+    "Guatemala": 88.277,
+    "Nigeria": 69.751
+   }
+  },
+  {
+   "name": "Outdoors",
+   "unit_value": 44.28,
+   "cv": 0.502,
+   "weekly_demand": {
+    "United States": 483.162,
+    "France": 193.588,
+    "Mexico": 249.29,
+    "Germany": 149.076,
+    "Australia": 151.19,
+    "United Kingdom": 96.11,
+    "Brazil": 163.126,
+    "China": 113.89,
+    "Italy": 86.661,
+    "India": 100.959,
+    "Spain": 55.453,
+    "Indonesia": 79.947,
+    "El Salvador": 62.291,
+    "Honduras": 58.686,
+    "Dominican Republic": 70.124,
+    "Cuba": 61.421,
+    "Turkey": 67.762,
+    "Nicaragua": 52.096,
+    "Guatemala": 47.371,
+    "Nigeria": 46.874
+   }
+  }
+ ],
+ "params": {
+  "weeks_per_year": 52,
+  "demand_scale": 20,
+  "lead_time_central_dc": 3.0,
+  "lead_time_dc_zone": 1.0,
+  "lead_time_direct": 4.0,
+  "holding_rate": 0.25,
+  "inbound_rate": 0.1,
+  "outbound_rate": 0.55,
+  "direct_rate": 0.45,
+  "review_weeks": 2.0,
+  "service_level": 0.95
+ }
+}

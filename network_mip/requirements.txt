@@ -1,0 +1,5 @@
+pulp>=2.8
+numpy
+pandas
+scipy
+matplotlib

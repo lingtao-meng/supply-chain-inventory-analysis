@@ -1,0 +1,10 @@
+capacity_scale,policy,open_count,open_dcs,uses_direct,direct_zones
+1.0,deterministic,5,Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,8
+1.0,stochastic,5,Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,8
+1.0,robust,5,Dubai;Rotterdam;Shanghai;Singapore;São Paulo,True,8
+0.5,deterministic,5,Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,8
+0.5,stochastic,5,Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,8
+0.5,robust,6,Dubai;Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,8
+0.35,deterministic,6,Dubai;Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,9
+0.35,stochastic,6,Dubai;Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,9
+0.35,robust,6,Dubai;Lagos;Rotterdam;Shanghai;Singapore;São Paulo,True,9

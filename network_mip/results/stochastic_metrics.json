@@ -1,0 +1,73 @@
+{
+  "params": {
+    "scenarios": 10,
+    "sigma": 0.35,
+    "capacity_scales": "1.0,0.5,0.35",
+    "overflow_cost": 5.0,
+    "seed": 7,
+    "time_limit": 90
+  },
+  "results": [
+    {
+      "capacity_scale": 1.0,
+      "sigma": 0.35,
+      "scenarios": 10,
+      "det_expected": 4454068.04368989,
+      "det_worst": 4978863.681751138,
+      "stoch_expected": 4454068.04368989,
+      "stoch_worst": 4978863.681751138,
+      "robust_expected": 4489774.775240134,
+      "robust_worst": 4976969.597390544,
+      "wait_and_see": 4445482.67824515,
+      "vss": 0.0,
+      "evpi": 8585.36544474028,
+      "vss_pct": 0.0,
+      "evpi_pct": 0.0019275335177923987,
+      "det_open": 5,
+      "stoch_open": 5,
+      "robust_open": 5
+    },
+    {
+      "capacity_scale": 0.5,
+      "sigma": 0.35,
+      "scenarios": 10,
+      "det_expected": 4472782.50073277,
+      "det_worst": 4978863.681751138,
+      "stoch_expected": 4472782.50073277,
+      "stoch_worst": 4978863.681751138,
+      "robust_expected": 4497954.078918481,
+      "robust_worst": 4978461.87052317,
+      "wait_and_see": 4450420.694769483,
+      "vss": 0.0,
+      "evpi": 22361.80596328713,
+      "vss_pct": 0.0,
+      "evpi_pct": 0.004999529031340921,
+      "det_open": 5,
+      "stoch_open": 5,
+      "robust_open": 6
+    },
+    {
+      "capacity_scale": 0.35,
+      "sigma": 0.35,
+      "scenarios": 10,
+      "det_expected": 4763782.922173915,
+      "det_worst": 5323267.113283658,
+      "stoch_expected": 4727253.667380489,
+      "stoch_worst": 5214979.937199282,
+      "robust_expected": 4727253.667380489,
+      "robust_worst": 5214979.937199282,
+      "wait_and_see": 4671760.909934793,
+      "vss": 36529.25479342602,
+      "evpi": 55492.75744569674,
+      "vss_pct": 0.00766811909572827,
+      "evpi_pct": 0.011648884584432964,
+      "det_open": 6,
+      "stoch_open": 6,
+      "robust_open": 6
+    }
+  ],
+  "interpretation": {
+    "vss": "cost of ignoring demand uncertainty in network design",
+    "evpi": "value of perfect demand information"
+  }
+}
