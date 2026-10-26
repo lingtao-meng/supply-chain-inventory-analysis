@@ -1,6 +1,6 @@
 # 两级库存网络优化（MILP）
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/) [![CI](https://github.com/lingtao-meng/multi-echelon-inventory-mip/actions/workflows/ci.yml/badge.svg)](https://github.com/lingtao-meng/multi-echelon-inventory-mip/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/) [![CI](https://github.com/lingtao-meng/supply-chain-inventory-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/lingtao-meng/supply-chain-inventory-analysis/actions/workflows/ci.yml)
 
 用混合整数规划回答一个经典的供应链问题：**中心仓 + 若干区域仓的两级网络，到底该开几个仓、开在哪、谁服务谁？**
 
